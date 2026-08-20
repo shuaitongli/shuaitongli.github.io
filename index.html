@@ -41,26 +41,32 @@
     margin: 0 auto;
     padding: 6rem 1.5rem 5rem;
   }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+  }
   header .avatar {
-    width: 128px;
-    height: 128px;
+    width: 108px;
+    height: 108px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 0 1.5rem;
-    display: block;
+    flex-shrink: 0;
     box-shadow: 0 0 0 1px var(--rule);
   }
   header h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: 600;
     margin: 0 0 0.35rem;
     letter-spacing: -0.01em;
   }
   header .role {
-    margin: 0 0 2.5rem;
+    margin: 0;
     color: var(--muted);
-    font-size: 1.02rem;
+    font-size: 1rem;
     font-style: italic;
+    line-height: 1.4;
   }
   section { margin-bottom: 2.6rem; }
   section h2 {
@@ -116,6 +122,13 @@
     color: var(--muted);
     font-size: 0.8rem;
   }
+  @media (max-width: 480px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -123,8 +136,10 @@
 
   <header>
     <img class="avatar" src="avatar.jpg" alt="Shuaitong Li">
-    <h1>Shuaitong Li</h1>
-    <p class="role">Master's Student, Institute of Automation, Chinese Academy of Sciences</p>
+    <div>
+      <h1>Shuaitong Li</h1>
+      <p class="role">Master's Student, Institute of Automation, Chinese Academy of Sciences</p>
+    </div>
   </header>
 
   <section class="bio">
