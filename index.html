@@ -115,6 +115,18 @@
     border-radius: 999px;
     padding: 0.25rem 0.8rem;
   }
+  .publication .figure-link {
+    display: block;
+    margin-bottom: 1rem;
+    border-bottom: none;
+  }
+  .publication .figure-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+  }
   .publication h3 {
     font-size: 1.05rem;
     font-weight: 600;
@@ -177,6 +189,9 @@
   <section class="publications">
     <h2>Publications</h2>
     <article class="publication">
+      <a class="figure-link" href="assets/figures/bacam-overview.png" target="_blank" rel="noopener" aria-label="View BACAM method overview at full size">
+        <img src="assets/figures/bacam-overview.png" alt="BACAM method overview: continual agent merging with task-level stability–plasticity control (NPC and OSC) and tensor-level conflict-aware plasticity budgeting (CAPB)." width="2000" height="1145" loading="lazy" decoding="async">
+      </a>
       <h3><a href="https://arxiv.org/abs/2610.04966">BACAM: Behavior-Aware Continual Agent Merging for Multi-Turn Interaction</a></h3>
       <p><strong>Shuaitong Li</strong>, Baochen Xiong, Xiaoshan Yang, Xizhe Zheng, Yifan Xu, Jianhao Huang, Changsheng Xu</p>
       <p class="venue">arXiv preprint, 2026</p>
