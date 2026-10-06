@@ -3,218 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 <title>Shuaitong Li</title>
-<meta name="description" content="Shuaitong Li — Master's student at the Institute of Automation, Chinese Academy of Sciences, working on LLM agents and model merging.">
+<meta name="description" content="Shuaitong Li — Master's student at CASIA. Research in LLM agents, model merging, and continual learning.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #fbfaf8;
-    --fg: #1c1a17;
-    --muted: #6b6459;
-    --rule: #dcd6cc;
-    --accent: #8a3b2b;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #161513;
-      --fg: #ece8e1;
-      --muted: #a39c8e;
-      --rule: #3a362f;
-      --accent: #d98a72;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Lora', Georgia, 'Times New Roman', serif;
-    line-height: 1.65;
-    font-size: 18px;
-  }
-  main {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 6rem 1.5rem 5rem;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    gap: 1.75rem;
-    margin-bottom: 3rem;
-  }
-  header .avatar {
-    width: 108px;
-    height: 108px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 1px var(--rule);
-  }
-  header h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin: 0 0 0.35rem;
-    letter-spacing: -0.01em;
-  }
-  header .role {
-    margin: 0;
-    color: var(--muted);
-    font-size: 1rem;
-    font-style: italic;
-    line-height: 1.4;
-  }
-  section { margin-bottom: 2.6rem; }
-  section h2 {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 1rem;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 0.5rem;
-  }
-  p { margin: 0 0 1rem; }
-  p:last-child { margin-bottom: 0; }
-  ul.plain {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  ul.plain li {
-    margin-bottom: 0.55rem;
-    display: flex;
-    gap: 0.6rem;
-  }
-  ul.plain li:last-child { margin-bottom: 0; }
-  ul.plain .label {
-    color: var(--muted);
-    min-width: 5.2rem;
-    flex-shrink: 0;
-  }
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-  }
-  a:hover { border-bottom-color: var(--accent); }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .tags span {
-    font-size: 0.85rem;
-    color: var(--muted);
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    padding: 0.25rem 0.8rem;
-  }
-  .publication .figure-link {
-    display: block;
-    margin-bottom: 1rem;
-    border-bottom: none;
-  }
-  .publication .figure-link img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-  }
-  .publication h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 0 0 0.5rem;
-  }
-  .publication p {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-  }
-  .publication .venue { color: var(--muted); }
-  .publication .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 0;
-  }
-  footer {
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-    font-size: 0.8rem;
-  }
-  @media (max-width: 480px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.25rem;
-    }
-  }
-</style>
+<script>
+try { const theme = localStorage.getItem('theme'); if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme; } catch {}
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js" defer></script>
 </head>
 <body>
-<main>
-
-  <header>
-    <img class="avatar" src="avatar.jpg" alt="Shuaitong Li">
-    <div>
-      <h1>Shuaitong Li</h1>
-      <p class="role">Master's Student, Institute of Automation, Chinese Academy of Sciences</p>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main navigation">
+    <a class="brand" href="#about"><strong>Shuaitong</strong> Li</a>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#publications">publications</a>
+      <a href="#contact">contact</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false" hidden>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.7 13A9 9 0 0 1 11 3.3 9 9 0 1 0 20.7 13Z"/></svg>
+      </button>
     </div>
-  </header>
-
-  <section class="bio">
-    <p>I am a master's student at the Institute of Automation, Chinese Academy of Sciences (CASIA), advised by Prof. Xiaoshan Yang. Before that, I received my B.Eng. in Artificial Intelligence from Central South University.</p>
-    <p>My research focuses on LLM agents and model merging.</p>
-  </section>
-
-  <section class="interests">
-    <h2>Research Interests</h2>
-    <div class="tags">
-      <span>LLM Agents</span>
-      <span>Model Merging</span>
-      <span>Continual Learning</span>
-      <span>Reinforcement Learning</span>
+  </nav>
+</header>
+<main class="container" id="main">
+  <section id="about" class="about" aria-labelledby="name">
+    <div class="intro">
+      <h1 id="name"><strong>Shuaitong</strong> Li</h1>
+      <p class="affiliation">Master's Student · Institute of Automation, Chinese Academy of Sciences</p>
+      <div class="bio">
+        <p>I am a master's student at the <strong>Institute of Automation, Chinese Academy of Sciences (CASIA)</strong>, advised by Prof. Xiaoshan Yang. Before that, I received my B.Eng. in Artificial Intelligence from Central South University.</p>
+        <p>My research focuses on <strong>LLM agents</strong> and <strong>model merging</strong>.</p>
+      </div>
+      <div class="social-links">
+        <a href="mailto:lishuaitong16@gmail.com">Email <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/shuaitongli">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
+    <figure class="profile">
+      <img src="avatar.jpg" alt="Portrait of Shuaitong Li" width="240" height="240" fetchpriority="high">
+      <figcaption>LLM Agents &amp; Model Merging</figcaption>
+    </figure>
   </section>
 
-  <section class="publications">
-    <h2>Publications</h2>
-    <article class="publication">
-      <a class="figure-link" href="assets/figures/bacam-overview.png" target="_blank" rel="noopener" aria-label="View BACAM method overview at full size">
-        <img src="assets/figures/bacam-overview.png" alt="BACAM method overview: continual agent merging with task-level stability–plasticity control (NPC and OSC) and tensor-level conflict-aware plasticity budgeting (CAPB)." width="2000" height="1145" loading="lazy" decoding="async">
-      </a>
-      <h3><a href="https://arxiv.org/abs/2610.04966">BACAM: Behavior-Aware Continual Agent Merging for Multi-Turn Interaction</a></h3>
-      <p><strong>Shuaitong Li</strong>, Baochen Xiong, Xiaoshan Yang, Xizhe Zheng, Yifan Xu, Jianhao Huang, Changsheng Xu</p>
-      <p class="venue">arXiv preprint, 2026</p>
-      <p class="links">
-        <a href="https://arxiv.org/abs/2610.04966">arXiv</a>
-        <a href="https://arxiv.org/pdf/2610.04966">PDF</a>
-        <a href="https://github.com/shuaitongli/BACAM">Code</a>
-      </p>
-    </article>
-  </section>
-
-  <section class="contact">
-    <h2>Contact</h2>
-    <ul class="plain">
-      <li><span class="label">Email</span> <a href="mailto:lishuaitong16@gmail.com">lishuaitong16@gmail.com</a></li>
-      <li><span class="label">GitHub</span> <a href="https://github.com/shuaitongli">github.com/shuaitongli</a></li>
+  <section class="research" aria-labelledby="research-title">
+    <h2 id="research-title">research interests</h2>
+    <ul class="interests">
+      <li>LLM Agents</li><li>Model Merging</li><li>Continual Learning</li><li>Reinforcement Learning</li>
     </ul>
   </section>
 
-  <footer>
-    &copy; 2026 Shuaitong Li
-  </footer>
+  <section class="news" aria-labelledby="news-title">
+    <h2 id="news-title">news</h2>
+    <div class="news-item"><time datetime="2026-10-04">Oct 04, 2026</time><p>Our preprint <a href="https://arxiv.org/abs/2610.04966">BACAM</a> is available on arXiv, with <a href="https://github.com/shuaitongli/BACAM">code</a> released.</p></div>
+  </section>
 
+  <section id="publications" aria-labelledby="publications-title">
+    <h2 id="publications-title">publications</h2>
+    <div class="year-heading"><span>2026</span></div>
+    <article class="publication">
+      <div class="publication-visual">
+        <a class="figure-link" href="assets/figures/bacam-overview.png" target="_blank" rel="noopener" aria-label="Open BACAM method diagram at full size in a new tab">
+          <span class="venue-badge">arXiv</span>
+          <img src="assets/figures/bacam-overview.png" alt="BACAM method: continual agent merging, task-level stability–plasticity control (NPC and OSC), and tensor-level conflict-aware plasticity budgeting (CAPB)." width="2000" height="1145" loading="lazy" decoding="async">
+        </a>
+        <span class="figure-hint">Click to view method diagram ↗</span>
+      </div>
+      <div class="publication-body">
+        <h3><a href="https://arxiv.org/abs/2610.04966">BACAM: Behavior-Aware Continual Agent Merging for Multi-Turn Interaction</a></h3>
+        <p class="authors"><strong>Shuaitong Li</strong>, Baochen Xiong, Xiaoshan Yang, Xizhe Zheng, Yifan Xu, Jianhao Huang, Changsheng Xu</p>
+        <p class="venue">arXiv preprint, 2026</p>
+        <p class="paper-summary">Continually integrating specialized agents through behavior-aware model merging.</p>
+        <div class="paper-links">
+          <a href="https://arxiv.org/abs/2610.04966">arXiv</a>
+          <a href="https://arxiv.org/pdf/2610.04966">PDF</a>
+          <a href="https://github.com/shuaitongli/BACAM">Code</a>
+        </div>
+        <details>
+          <summary>Abstract</summary>
+          <div class="detail-content"><p>BACAM combines specialized agents sequentially without retaining earlier experts. It trains parameter-wise merging gates on interaction trajectories, using expert guidance to acquire new behavior while limiting interference with existing capabilities. Task-level stability–plasticity control and tensor-level conflict budgets guide these updates. The gates are folded into model weights, adding no inference-time parameters. Across web shopping, tool use, information retrieval, and embodied interaction, BACAM achieves an average success rate of 62.82%, improving on the strongest evaluated merging baseline by 21.69 percentage points.</p><a href="https://arxiv.org/abs/2610.04966">Read the full abstract on arXiv ↗</a></div>
+        </details>
+        <details>
+          <summary>BibTeX</summary>
+          <div class="detail-content"><pre><code>@misc{li2026bacam,
+  title = {BACAM: Behavior-Aware Continual Agent Merging
+           for Multi-Turn Interaction},
+  author = {Shuaitong Li and Baochen Xiong and
+            Xiaoshan Yang and Xizhe Zheng and Yifan Xu and
+            Jianhao Huang and Changsheng Xu},
+  year = {2026},
+  eprint = {2610.04966},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2610.04966}
+}</code></pre></div>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">contact</h2>
+    <p class="contact-intro">For research discussions and collaboration, feel free to get in touch.</p>
+    <div class="contact-links"><a href="mailto:lishuaitong16@gmail.com">lishuaitong16@gmail.com</a><a href="https://github.com/shuaitongli">github.com/shuaitongli ↗</a></div>
+  </section>
 </main>
+<footer class="site-footer"><div class="container"><span>© 2026 Shuaitong Li</span><span>Design inspired by <a href="https://github.com/alshedivat/al-folio">al-folio</a>.</span></div></footer>
 </body>
 </html>
